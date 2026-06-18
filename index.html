@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe6">
+  <meta name="description" content="FD² is a dedicated framework for fine-grained dataset distillation, accepted at ECCV 2026.">
+  <meta property="og:title" content="FD² — Fine-Grained Dataset Distillation">
+  <meta property="og:description" content="Distill the details that make a difference.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="overview.jpg">
+  <title>FD² — Fine-Grained Dataset Distillation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="FD squared home">
+      <span class="brand-mark">FD<sup>2</sup></span>
+      <span class="brand-name">Fine-Grained<br>Dataset Distillation</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#method">Method</a>
+      <a href="#insights">Insights</a>
+      <a href="#citation">Citation</a>
+    </nav>
+    <a class="nav-cta" href="https://arxiv.org/abs/2603.25144" target="_blank" rel="noreferrer">Read paper <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="venue-badge reveal"><span>Accepted at</span> ECCV 2026</div>
+      <div class="eyebrow reveal delay-1"><span class="eyebrow-dot"></span> Fine-grained recognition · Dataset distillation</div>
+      <h1 class="reveal delay-1">Distill the <em>details</em><br>that make a difference.</h1>
+      <p class="hero-copy reveal delay-2">FD<sup>2</sup> preserves subtle, localized cues while building a compact synthetic dataset—turning fine-grained variation from a distillation obstacle into a learning signal.</p>
+      <div class="hero-actions reveal delay-3">
+        <a class="button button-dark" href="https://arxiv.org/pdf/2603.25144" target="_blank" rel="noreferrer">Read the paper <span>↗</span></a>
+        <a class="button button-light" href="https://github.com/Guang000/FD2" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+      </div>
+      <div class="hero-meta reveal delay-3">
+        <div><span>Framework</span><strong>Decoupled DD</strong></div>
+        <div><span>Focus</span><strong>Localized cues</strong></div>
+        <div><span>Venue</span><strong>ECCV 2026</strong></div>
+      </div>
+      <div class="hero-orbit orbit-a" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-b" aria-hidden="true"></div>
+    </section>
+
+    <section class="authors section-shell reveal" aria-label="Authors">
+      <p>
+        <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Hongxu+Ma" target="_blank" rel="noreferrer" title="Hongxu Ma on Google Scholar">Hongxu Ma</a><span>·</span>
+        <a href="https://www-lmd.ist.hokudai.ac.jp/member/guang-li/" target="_blank" rel="noreferrer" title="Guang Li's homepage">Guang Li</a><span>·</span>
+        <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Shijie+Wang+Dalian+University+of+Technology" target="_blank" rel="noreferrer" title="Shijie Wang on Google Scholar">Shijie Wang</a><span>·</span>
+        <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Dongzhan+Zhou" target="_blank" rel="noreferrer" title="Dongzhan Zhou on Google Scholar">Dongzhan Zhou</a><span>·</span>
+        <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Baoli+Sun+Dalian+University+of+Technology" target="_blank" rel="noreferrer" title="Baoli Sun on Google Scholar">Baoli Sun</a><span>·</span>
+        <a href="https://www-lmd.ist.hokudai.ac.jp/member/takahiro-ogawa/" target="_blank" rel="noreferrer" title="Takahiro Ogawa's homepage">Takahiro Ogawa</a><span>·</span>
+        <a href="https://www-lmd.ist.hokudai.ac.jp/member/miki-haseyama/" target="_blank" rel="noreferrer" title="Miki Haseyama's homepage">Miki Haseyama</a><span>·</span>
+        <a href="https://faculty.dlut.edu.cn/2010015018/zh_CN/index/689531/list/index.htm" target="_blank" rel="noreferrer" title="Zhihui Wang's homepage">Zhihui Wang</a>
+      </p>
+      <small>Author names link to personal pages or Google Scholar <span aria-hidden="true">↗</span></small>
+    </section>
+
+    <section class="problem section-shell" id="insights">
+      <div class="section-index reveal">01 / Motivation</div>
+      <div class="problem-grid">
+        <h2 class="reveal">Fine-grained data asks a harder question.</h2>
+        <div class="problem-copy reveal delay-1">
+          <p>Conventional decoupled distillation is guided by coarse class labels. On fine-grained datasets, that can blur the tiny distinctions between classes—and make distilled images within a class too alike.</p>
+          <p class="pull-quote">A bird is not just a bird. The answer may live in the wing, the beak, or a patch of color.</p>
+        </div>
+      </div>
+      <div class="contrast-grid">
+        <article class="contrast-card old reveal">
+          <div class="card-top"><span>Conventional DD</span><span class="status">Coarse</span></div>
+          <div class="specimen conventional" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h3>Same-class collapse</h3>
+          <p>Samples inherit nearly identical optimization signals, limiting local diversity.</p>
+        </article>
+        <article class="contrast-card new reveal delay-1">
+          <div class="card-top"><span>FD<sup>2</sup></span><span class="status">Fine-grained</span></div>
+          <div class="specimen fd" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h3>Discriminative diversity</h3>
+          <p>Class prototypes guide identity while attention constraints preserve distinct cues.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="method section-shell" id="method">
+      <div class="section-index reveal">02 / Framework</div>
+      <div class="method-heading">
+        <h2 class="reveal">One framework.<br>Three deliberate stages.</h2>
+        <p class="reveal delay-1">FD<sup>2</sup> slots into the established decoupled dataset-distillation pipeline without rewriting the recipe.</p>
+      </div>
+      <div class="stage-grid">
+        <article class="stage reveal">
+          <div class="stage-number">01</div>
+          <div class="stage-icon prototype-icon"><i></i><i></i><i></i></div>
+          <h3>Model pretraining</h3>
+          <p>Counterfactual attention learning discovers discriminative regions and aggregates their representations into class prototypes.</p>
+          <span class="stage-tag">Build prototypes</span>
+        </article>
+        <article class="stage featured reveal delay-1">
+          <div class="stage-number">02</div>
+          <div class="stage-icon attention-icon"><i></i><i></i></div>
+          <h3>Sample distillation</h3>
+          <p>A characteristic constraint pulls each sample toward its own prototype and away from others. A similarity constraint diversifies same-class attention.</p>
+          <span class="stage-tag">Distill details</span>
+        </article>
+        <article class="stage reveal delay-2">
+          <div class="stage-number">03</div>
+          <div class="stage-icon label-icon"><i></i><i></i><i></i></div>
+          <h3>Soft-label generation</h3>
+          <p>The pretrained fine-grained model converts distilled samples into informative soft labels for efficient downstream training.</p>
+          <span class="stage-tag">Transfer knowledge</span>
+        </article>
+      </div>
+
+      <figure class="overview reveal">
+        <div class="figure-label">Framework overview <span>Figure 2</span></div>
+        <button class="figure-button" type="button" aria-label="Open framework diagram at full size">
+          <img src="overview.jpg" alt="FD squared framework: model pretraining, sample distillation, and soft-label generation">
+          <span class="zoom-hint">Click to inspect <b>↗</b></span>
+        </button>
+        <figcaption>FD<sup>2</sup> augments a decoupled distillation pipeline with counterfactual attention learning (CAL), fine-grained characteristic alignment, and same-class attention diversity.</figcaption>
+      </figure>
+    </section>
+
+    <section class="constraints section-shell">
+      <div class="section-index reveal">03 / Design</div>
+      <div class="constraint-grid">
+        <div class="constraint-intro reveal">
+          <h2>Identity,<br>without imitation.</h2>
+          <p>Two complementary objectives keep the synthetic set faithful to its class and meaningfully varied within it.</p>
+        </div>
+        <article class="constraint-card characteristic reveal delay-1">
+          <span class="math">ℒ<sub>F</sub></span>
+          <div>
+            <p class="overline">Fine-grained characteristic</p>
+            <h3>Be closer to your class.</h3>
+            <p>Align each representation with its class prototype while repelling prototypes from other classes.</p>
+          </div>
+          <div class="mini-viz characteristic-viz" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </article>
+        <article class="constraint-card similarity reveal delay-2">
+          <span class="math">ℒ<sub>S</sub></span>
+          <div>
+            <p class="overline">Attention similarity</p>
+            <h3>Look somewhere different.</h3>
+            <p>Reduce overlap between current and previous attention maps from the same class.</p>
+          </div>
+          <div class="mini-viz similarity-viz" aria-hidden="true"><i></i><i></i></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="takeaway">
+      <div class="section-shell takeaway-inner">
+        <div class="section-index reveal">04 / Takeaway</div>
+        <p class="kicker reveal">The result</p>
+        <h2 class="reveal delay-1">A compact dataset that remembers <em>where</em> to look.</h2>
+        <p class="takeaway-copy reveal delay-2">Across fine-grained and general datasets, FD<sup>2</sup> integrates seamlessly with decoupled dataset distillation and improves performance in most settings—showing strong transferability.</p>
+        <div class="takeaway-tags reveal delay-3"><span>Fine-grained aware</span><span>Plug-and-play</span><span>Transferable</span></div>
+      </div>
+    </section>
+
+    <section class="citation section-shell" id="citation">
+      <div class="section-index reveal">05 / Citation</div>
+      <div class="citation-grid">
+        <div class="reveal">
+          <h2>Build on the details.</h2>
+          <p>If FD<sup>2</sup> supports your research, please cite our paper.</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2603.25144" target="_blank" rel="noreferrer">arXiv <span>↗</span></a>
+            <a href="https://github.com/Guang000/FD2" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          </div>
+        </div>
+        <div class="code-wrap reveal delay-1">
+          <button class="copy-button" type="button">Copy BibTeX</button>
+          <pre><code id="bibtex">@inproceedings{ma2026fd2,
+  title   = {FD$^2$: A Dedicated Framework for
+             Fine-Grained Dataset Distillation},
+  author  = {Ma, Hongxu and Li, Guang and Wang, Shijie
+             and Zhou, Dongzhan and Sun, Baoli and
+             Ogawa, Takahiro and Haseyama, Miki and
+             Wang, Zhihui},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year    = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section-shell">
+    <a class="brand-mark" href="#top">FD<sup>2</sup></a>
+    <p>A Dedicated Framework for Fine-Grained Dataset Distillation</p>
+    <p>© 2026 FD<sup>2</sup> authors</p>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Framework diagram">
+    <button class="lightbox-close" type="button" aria-label="Close diagram">×</button>
+    <img src="overview.jpg" alt="Full-size FD squared framework diagram">
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
