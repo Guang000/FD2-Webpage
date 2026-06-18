@@ -67,14 +67,16 @@ nav a:hover::after { right: 0; }
 .hero-orbit { position: absolute; border: 1px solid var(--line); border-radius: 50%; pointer-events: none; }
 .orbit-a { width: 520px; height: 520px; left: -360px; top: 80px; }
 .orbit-b { width: 360px; height: 360px; right: -260px; top: 260px; }
-.authors { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0 18px; text-align: center; }
+.authors { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0 20px; text-align: center; }
 .authors p { margin: 0; display: flex; justify-content: center; flex-wrap: wrap; column-gap: 9px; row-gap: 4px; font: 400 11px/1.8 "DM Mono", monospace; color: var(--muted); }
 .authors a { position: relative; text-decoration: none; transition: color .2s ease; }
 .authors a::after { content: "↗"; display: inline-block; margin-left: 3px; font-size: 8px; opacity: 0; transform: translate(-3px, 2px); transition: .2s ease; }
 .authors a:hover { color: var(--green); }
 .authors a:hover::after { opacity: 1; transform: translate(0, 0); }
 .authors p > span:not(.author-name) { opacity: .4; }
-.authors small { display: block; margin-top: 6px; color: var(--muted); opacity: .6; font: 400 8px/1.5 "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+.authors sup { margin-left: 2px; color: var(--green); font-size: .65em; font-weight: 600; }
+.affiliations { max-width: 980px; margin: 9px auto 0; display: flex; justify-content: center; flex-wrap: wrap; column-gap: 16px; row-gap: 3px; color: var(--muted); font: 400 8px/1.6 "DM Mono", monospace; letter-spacing: .025em; }
+.affiliations span { white-space: nowrap; }
 .mobile-break { display: none; }
 
 .section-index { padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font: 500 10px/1 "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
