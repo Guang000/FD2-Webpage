@@ -73,7 +73,7 @@ nav a:hover::after { right: 0; }
 .authors a::after { content: "↗"; display: inline-block; margin-left: 3px; font-size: 8px; opacity: 0; transform: translate(-3px, 2px); transition: .2s ease; }
 .authors a:hover { color: var(--green); }
 .authors a:hover::after { opacity: 1; transform: translate(0, 0); }
-.authors p > span { opacity: .4; }
+.authors p > span:not(.author-name) { opacity: .4; }
 .authors small { display: block; margin-top: 6px; color: var(--muted); opacity: .6; font: 400 8px/1.5 "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
 .mobile-break { display: none; }
 
